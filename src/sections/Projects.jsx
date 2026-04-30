@@ -3,11 +3,11 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
   {
     title: "StudySync",
+    link: "https://studysync8077.netlify.app/",
     description:
       "A collaborative learning platform that connects students and educators, providing tools for interactive lessons, real-time feedback, and personalized learning paths.",
     image: "/projects/project1.png",
     tags: ["HTML", "CSS", "JavaScript", "Currently Working"],
-    link: "https://studysync8077.netlify.app/",
     github: "https://github.com/Sujeet8077/Minor-Project",
   },
   {
