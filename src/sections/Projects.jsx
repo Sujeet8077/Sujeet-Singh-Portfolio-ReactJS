@@ -162,7 +162,7 @@ export const Projects = () => {
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
             {/* Replace '#' with your actual GitHub or portfolio link */}
             <a 
-              href="https://github.com/Sujeet8077" 
+              href="https://minorprojectshowcase8077.netlify.app/" 
               target="_blank" 
               rel="noreferrer"
               className="inline-block"
