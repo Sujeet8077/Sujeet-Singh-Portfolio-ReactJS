@@ -85,7 +85,7 @@ export const Hero = () => {
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
               <AnimatedBorderButton>
                 <Download className="w-5 h-5" />
-                 <a href="public/assets/Uploaded resume (3).pdf" target="_blank" rel="noopener noreferrer">
+                 <a href="/assets/uploaded-resume.pdf" target="_blank" rel="noopener noreferrer">
                   Download CV
                  </a>
               </AnimatedBorderButton>
@@ -120,7 +120,7 @@ export const Hero = () => {
               />
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
-                  src="public/assets/profile photo.jpg"
+                  src="/assets/profile-photo.jpg"
                   alt="Sujeet Singh"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
