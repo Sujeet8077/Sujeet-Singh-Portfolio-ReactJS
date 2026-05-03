@@ -87,7 +87,7 @@ export const Projects = () => {
                   to-transparent opacity-60"
                 />
                 
-                {/* Overlay Links - Visible on Desktop Hover (Hidden on Mobile for better UX) */}
+                {/* Desktop Overlay Links */}
                 <div className="absolute inset-0 hidden md:flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.link}
@@ -112,7 +112,6 @@ export const Projects = () => {
               <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
                 <div>
                   <div className="flex items-start justify-between">
-                    {/* Updated Title: Now a clickable link for mobile and desktop */}
                     <a 
                       href={project.link} 
                       target="_blank" 
@@ -120,11 +119,9 @@ export const Projects = () => {
                       className="text-xl font-semibold group-hover:text-primary transition-colors flex items-center gap-2"
                     >
                       {project.title}
-                      {/* External Link icon visible only on Mobile devices */}
                       <ExternalLink className="w-4 h-4 md:hidden text-primary" />
                     </a>
 
-                    {/* Mobile-only GitHub icon for direct access */}
                     <div className="flex gap-3 md:hidden">
                        <a 
                          href={project.github} 
@@ -136,7 +133,6 @@ export const Projects = () => {
                        </a>
                     </div>
 
-                    {/* Desktop-only animated arrow icon */}
                     <ArrowUpRight
                       className="hidden md:block w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
                     />
@@ -147,7 +143,6 @@ export const Projects = () => {
                   </p>
                 </div>
 
-                {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2 mt-4">
                   {project.tags.map((tag, tagIdx) => (
                     <span
@@ -163,12 +158,20 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* View All CTA */}
+        {/* View All CTA - Updated with Link */}
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
-            <AnimatedBorderButton>
-              View All Projects
-              <ArrowUpRight className="w-5 h-5" />
-            </AnimatedBorderButton>
+            {/* Replace '#' with your actual GitHub or portfolio link */}
+            <a 
+              href="https://github.com/Sujeet8077" 
+              target="_blank" 
+              rel="noreferrer"
+              className="inline-block"
+            >
+              <AnimatedBorderButton>
+                View All Projects
+                <ArrowUpRight className="w-5 h-5" />
+              </AnimatedBorderButton>
+            </a>
         </div>
       </div>
     </section>
