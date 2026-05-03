@@ -1,5 +1,6 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+
 const projects = [
   {
     title: "StudySync",
@@ -42,9 +43,10 @@ const projects = [
 export const Projects = () => {
   return (
     <section id="projects" className="py-32 relative overflow-hidden">
-      {/* Bg glows */}
+      {/* Background Glows */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+      
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
@@ -69,10 +71,10 @@ export const Projects = () => {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
+              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1 flex flex-col"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
-              {/* Image */}
+              {/* Image Area */}
               <div className="relative overflow-hidden aspect-video">
                 <img
                   src={project.image}
@@ -82,18 +84,23 @@ export const Projects = () => {
                 <div
                   className="absolute inset-0 
                 bg-gradient-to-t from-card via-card/50
-                 to-transparent opacity-60"
+                  to-transparent opacity-60"
                 />
-                {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                
+                {/* Overlay Links - Visible on Desktop Hover (Hidden on Mobile for better UX) */}
+                <div className="absolute inset-0 hidden md:flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                   >
                     <ArrowUpRight className="w-5 h-5" />
                   </a>
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                   >
                     <Github className="w-5 h-5" />
@@ -101,23 +108,47 @@ export const Projects = () => {
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <ArrowUpRight
-                    className="w-5 h-5 
-                  text-muted-foreground group-hover:text-primary
-                   group-hover:translate-x-1 
-                   group-hover:-translate-y-1 transition-all"
-                  />
+              {/* Content Area */}
+              <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                <div>
+                  <div className="flex items-start justify-between">
+                    {/* Updated Title: Now a clickable link for mobile and desktop */}
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="text-xl font-semibold group-hover:text-primary transition-colors flex items-center gap-2"
+                    >
+                      {project.title}
+                      {/* External Link icon visible only on Mobile devices */}
+                      <ExternalLink className="w-4 h-4 md:hidden text-primary" />
+                    </a>
+
+                    {/* Mobile-only GitHub icon for direct access */}
+                    <div className="flex gap-3 md:hidden">
+                       <a 
+                         href={project.github} 
+                         target="_blank" 
+                         rel="noreferrer" 
+                         className="text-muted-foreground hover:text-primary"
+                        >
+                         <Github className="w-6 h-6" />
+                       </a>
+                    </div>
+
+                    {/* Desktop-only animated arrow icon */}
+                    <ArrowUpRight
+                      className="hidden md:block w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
+                    />
+                  </div>
+                  
+                  <p className="text-muted-foreground text-sm mt-2">
+                    {project.description}
+                  </p>
                 </div>
-                <p className="text-muted-foreground text-sm">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
+
+                {/* Tech Tags */}
+                <div className="flex flex-wrap gap-2 mt-4">
                   {project.tags.map((tag, tagIdx) => (
                     <span
                       key={tagIdx}
@@ -139,7 +170,6 @@ export const Projects = () => {
               <ArrowUpRight className="w-5 h-5" />
             </AnimatedBorderButton>
         </div>
-        
       </div>
     </section>
   );
