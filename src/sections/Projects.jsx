@@ -4,12 +4,12 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
   {
     title: "StudySync",
-    link: "https://studysync8077.netlify.app/",
+    link: "https://team-mars.onrender.com",
     description:
-      "A collaborative learning platform that connects students and educators, providing tools for interactive lessons, real-time feedback, and personalized learning paths.",
+      "A collaborative learning full-stack platform that connects students and educators, providing tools for interactive lessons, real-time feedback, and personalized learning paths.",
     image: "/projects/project1.png",
-    tags: ["HTML", "CSS", "JavaScript", "Currently Working"],
-    github: "https://github.com/Sujeet8077/Minor-Project",
+    tags: ["HTML", "CSS", "JavaScript","React", "Python FastAPI", "MongoDB"],
+    github: "https://github.com/Sujeet8077/Team-MARS.git",
   },
   {
     title: "CreativeSolutions",
